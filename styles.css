@@ -1,0 +1,28 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:#0f172a;
+  color:white;
+  line-height:1.6;
+}
+
+header{
+  position:sticky;
+  top:0;
+  background:#0f172aee;
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  padding:20px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+
+/* keep pasting the rest of your CSS here */
