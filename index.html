@@ -6,183 +6,7 @@
 
   <title>Structural design</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family: Arial, sans-serif;
-      background:#0f172a;
-      color:white;
-      line-height:1.6;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      background:#0f172aee;
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-      padding:20px 10%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
-    }
-
-    .logo{
-      font-size:1.3rem;
-      font-weight:bold;
-    }
-
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      opacity:0.8;
-      transition:0.2s;
-    }
-
-    nav a:hover{
-      opacity:1;
-    }
-
-    .hero{
-      min-height:90vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:0 10%;
-    }
-
-    .hero h1{
-      font-size:4rem;
-      margin-bottom:20px;
-    }
-
-    .hero p{
-      max-width:650px;
-      color:#cbd5e1;
-      font-size:1.2rem;
-      margin-bottom:30px;
-    }
-
-    .buttons{
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:14px 24px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.2s;
-    }
-
-    .primary{
-      background:#3b82f6;
-      color:white;
-    }
-
-    .primary:hover{
-      background:#2563eb;
-    }
-
-    .secondary{
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-    }
-
-    .secondary:hover{
-      background:rgba(255,255,255,0.05);
-    }
-
-    section{
-      padding:100px 10%;
-    }
-
-    h2{
-      font-size:2.2rem;
-      margin-bottom:20px;
-    }
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
-      margin-top:40px;
-    }
-
-    .project-card{
-      background:#1e293b;
-      padding:25px;
-      border-radius:16px;
-      transition:0.2s;
-    }
-
-    .project-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .project-card h3{
-      margin-bottom:10px;
-    }
-
-    .project-card a{
-      display:inline-block;
-      margin-top:15px;
-      color:#60a5fa;
-      text-decoration:none;
-    }
-
-    .blog-container{
-      display:grid;
-      gap:25px;
-      margin-top:40px;
-    }
-
-    .blog-post{
-      background:#1e293b;
-      padding:30px;
-      border-radius:16px;
-    }
-
-    .blog-post h3{
-      margin-bottom:10px;
-    }
-
-    .blog-post small{
-      color:#94a3b8;
-    }
-
-    .blog-post p{
-      margin-top:15px;
-      color:#cbd5e1;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px;
-      color:#94a3b8;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-
-    @media(max-width:768px){
-      .hero h1{
-        font-size:2.8rem;
-      }
-
-      nav{
-        display:none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -203,7 +27,7 @@
     <h1>Building Ideas Into Reality</h1>
 
     <p>
-      Structural desing, programming, and software.
+      Structural design, programming, and software.
       I try to put some help here, and share what I learn through projects and blog posts.
     </p>
 
@@ -222,9 +46,9 @@
   <section id="about">
     <h2>About Me</h2>
 
-    <p style="max-width:700px;">
+    <p class="about-text">
       Just a guy interested in learning.
-      Currently read about strain gauges...
+      Currently reading about strain gauges...
     </p>
   </section>
 
@@ -293,26 +117,64 @@
       <article class="blog-post" id="blog-post-2">
         <small>10th of May 2026</small>
 
-        <h3>Strain gauges</h3>
+        <h3>Strain Gauges</h3>
 
         <p>
-          I watched a youtube video of strain gauges. The things I learned from there was that:
-          - Strain gauges measure the resistance (how the material resists the movement of electrons between the atoms) --> if you stretch the gauge, the resistance increases
-          - Shorter gauge length means more accuracy, but in many cases longer gauge length is more appropriate
-          - Constantan is widely used material in strain gauges with the gauge factor around 2.0
-          - Typical strain measurement is 1-1000με and electrical resistance is 120Ω/350Ω.
-          - Wheatstone bridge is used to determine the electrical resistance of the strain gauge.
-          - Temperature compensation:
-            - Active compensation with usage of dummy strain gauge in unloaded area
-            - Self-compensation with the CTE same as the test item
-          - Strain gauge rosette: three strain gauges, one of which is placed in angle of 45 degrees
+          I watched a YouTube video about strain gauges. The things I learned were:
         </p>
+
+        <ul>
+          <li>
+            Strain gauges measure resistance. If you stretch the gauge,
+            the resistance increases.
+          </li>
+
+          <li>
+            Shorter gauge length means more accuracy,
+            but longer gauge length is often more practical.
+          </li>
+
+          <li>
+            Constantan is a widely used material in strain gauges
+            with a gauge factor around 2.0.
+          </li>
+
+          <li>
+            Typical strain measurement is 1–1000 με and electrical
+            resistance is commonly 120Ω or 350Ω.
+          </li>
+
+          <li>
+            A Wheatstone bridge is used to determine the electrical
+            resistance of the strain gauge.
+          </li>
+
+          <li>
+            Temperature compensation methods include:
+            <ul>
+              <li>
+                Active compensation using a dummy strain gauge
+                in an unloaded area
+              </li>
+
+              <li>
+                Self-compensation using a material with the same
+                coefficient of thermal expansion (CTE)
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            A strain gauge rosette uses three strain gauges,
+            one placed at a 45° angle.
+          </li>
+        </ul>
       </article>
 
       <article class="blog-post" id="blog-post-3">
         <small>May 2026</small>
 
-        <h3>Design of a post-tensioned bridge</h3>
+        <h3>Design of a Post-Tensioned Bridge</h3>
 
         <p>
           Here I document ideas, progress, challenges,
