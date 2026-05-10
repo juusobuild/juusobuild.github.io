@@ -1,126 +1,186 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Structural design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Your Portfolio</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    body {
+    body{
       font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      line-height: 1.6;
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
     }
 
-    header {
-      padding: 24px 10%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+    header{
+      position:sticky;
+      top:0;
+      background:#0f172aee;
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
     }
 
-    .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
+    .logo{
+      font-size:1.3rem;
+      font-weight:bold;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      opacity: 0.8;
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      opacity:0.8;
+      transition:0.2s;
     }
 
-    nav a:hover {
-      opacity: 1;
+    nav a:hover{
+      opacity:1;
     }
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 10%;
+    .hero{
+      min-height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:0 10%;
     }
 
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
     }
 
-    .hero p {
-      max-width: 600px;
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      margin-bottom: 30px;
+    .hero p{
+      max-width:650px;
+      color:#cbd5e1;
+      font-size:1.2rem;
+      margin-bottom:30px;
     }
 
-    .buttons {
-      display: flex;
-      gap: 15px;
+    .buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
     }
 
-    .btn {
-      padding: 14px 22px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s ease;
+    .btn{
+      padding:14px 24px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.2s;
     }
 
-    .primary {
-      background: #3b82f6;
-      color: white;
+    .primary{
+      background:#3b82f6;
+      color:white;
     }
 
-    .primary:hover {
-      background: #2563eb;
+    .primary:hover{
+      background:#2563eb;
     }
 
-    .secondary {
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
+    .secondary{
+      border:1px solid rgba(255,255,255,0.2);
+      color:white;
     }
 
-    .secondary:hover {
-      background: rgba(255,255,255,0.05);
+    .secondary:hover{
+      background:rgba(255,255,255,0.05);
     }
 
-    section {
-      padding: 100px 10%;
+    section{
+      padding:100px 10%;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
+    h2{
+      font-size:2.2rem;
+      margin-bottom:20px;
     }
 
-    .card {
-      background: #1e293b;
-      padding: 25px;
-      border-radius: 14px;
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:40px;
     }
 
-    .card h3 {
-      margin-bottom: 10px;
+    .project-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:16px;
+      transition:0.2s;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.1);
+    .project-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .project-card h3{
+      margin-bottom:10px;
+    }
+
+    .project-card a{
+      display:inline-block;
+      margin-top:15px;
+      color:#60a5fa;
+      text-decoration:none;
+    }
+
+    .blog-container{
+      display:grid;
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .blog-post{
+      background:#1e293b;
+      padding:30px;
+      border-radius:16px;
+    }
+
+    .blog-post h3{
+      margin-bottom:10px;
+    }
+
+    .blog-post small{
+      color:#94a3b8;
+    }
+
+    .blog-post p{
+      margin-top:15px;
+      color:#cbd5e1;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2.8rem;
+      }
+
+      nav{
+        display:none;
+      }
     }
   </style>
 </head>
@@ -128,71 +188,143 @@
 <body>
 
   <header>
-    <div class="logo">Bridge</div>
+    <div class="logo">YourBrand</div>
 
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- HERO -->
   <main class="hero">
-    <h1>Hi, I'm Juuso</h1>
+    <h1>Building Ideas Into Reality</h1>
 
     <p>
-      In this website, I have some guidance on structural design.
-      This is my personal portfolio hosted on GitHub Pages.
+      Developer, creator, and writer.
+      I build websites, apps, and share what I learn through projects and blog posts.
     </p>
 
     <div class="buttons">
-      <a class="btn primary" href="#projects">View Projects</a>
-      <a class="btn secondary" href="https://github.com/">GitHub</a>
+      <a class="btn primary" href="#projects">
+        View Projects
+      </a>
+
+      <a class="btn secondary" href="#blog">
+        Read Blog
+      </a>
     </div>
   </main>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
 
-    <p style="margin-top:20px; max-width:700px;">
-      I hope this site is going to help me and the others in structural design of concrete, steel and timber.
+    <p style="max-width:700px;">
+      Add your introduction here.
+      You can talk about your skills, technologies, goals,
+      or what you're currently learning.
     </p>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
 
-    <div class="projects">
+    <div class="projects-grid">
 
-      <div class="card">
-        <h3>Project One</h3>
-        <p>A cool website or app you built.</p>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+
+        <p>
+          My personal website built using HTML and CSS.
+        </p>
+
+        <a href="#blog-post-1">
+          Read Development Blog →
+        </a>
       </div>
 
-      <div class="card">
-        <h3>Project Two</h3>
-        <p>Another project description goes here.</p>
+      <div class="project-card">
+        <h3>Startup Landing Page</h3>
+
+        <p>
+          A modern responsive landing page concept.
+        </p>
+
+        <a href="#blog-post-2">
+          Read Case Study →
+        </a>
       </div>
 
-      <div class="card">
-        <h3>Project Three</h3>
-        <p>Something creative or technical.</p>
+      <div class="project-card">
+        <h3>Future App</h3>
+
+        <p>
+          Describe your future app or idea here.
+        </p>
+
+        <a href="#blog-post-3">
+          Read Progress Log →
+        </a>
       </div>
 
     </div>
   </section>
 
+  <!-- BLOG -->
+  <section id="blog">
+    <h2>Blog</h2>
+
+    <div class="blog-container">
+
+      <article class="blog-post" id="blog-post-1">
+        <small>May 2026</small>
+
+        <h3>Building My Portfolio Website</h3>
+
+        <p>
+          This was my first portfolio project hosted on GitHub Pages.
+          I learned responsive design, layouts, and smooth scrolling navigation.
+        </p>
+      </article>
+
+      <article class="blog-post" id="blog-post-2">
+        <small>May 2026</small>
+
+        <h3>Designing a Startup Landing Page</h3>
+
+        <p>
+          In this project I experimented with modern UI design,
+          card layouts, spacing, and mobile responsiveness.
+        </p>
+      </article>
+
+      <article class="blog-post" id="blog-post-3">
+        <small>May 2026</small>
+
+        <h3>Planning My Next Big App</h3>
+
+        <p>
+          Here I document ideas, progress, challenges,
+          and future plans for my next application.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
 
-    <p style="margin-top:20px;">
-      Phone: +xxx xxxxxxxxx
-      Email: your@email.com
-    </p>
+    <p>Email: your@email.com</p>
   </section>
 
   <footer>
-    © 2026 Bridges. Built with HTML & CSS.
+    © 2026 Your Name — Built with HTML & CSS
   </footer>
 
 </body>
