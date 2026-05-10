@@ -1,0 +1,199 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      opacity: 0.8;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 10%;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .primary {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #2563eb;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .secondary:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    section {
+      padding: 100px 10%;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">YourBrand</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h1>Hi, I'm Your Name</h1>
+
+    <p>
+      I build modern websites and digital experiences.
+      This is my personal portfolio hosted on GitHub Pages.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn secondary" href="https://github.com/">GitHub</a>
+    </div>
+  </main>
+
+  <section id="about">
+    <h2>About Me</h2>
+
+    <p style="margin-top:20px; max-width:700px;">
+      Write something about yourself here.
+      Your skills, interests, technologies, or goals.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+      <div class="card">
+        <h3>Project One</h3>
+        <p>A cool website or app you built.</p>
+      </div>
+
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>Another project description goes here.</p>
+      </div>
+
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>Something creative or technical.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <p style="margin-top:20px;">
+      Email: your@email.com
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Your Name. Built with HTML & CSS.
+  </footer>
+
+</body>
+</html>
